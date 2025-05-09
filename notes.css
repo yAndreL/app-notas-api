@@ -1,0 +1,248 @@
+html{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ccc;
+    padding: 8px;
+    height: 60px;
+}
+
+header h1{
+    margin: 0;
+}
+
+header nav{
+    display: flex;
+}
+
+header #loading{
+    width: 32px;
+    display: none;
+}
+
+header #loading.on{
+    display: block;
+}
+
+header nav button {
+    width: 48px;
+}
+
+footer{
+    background-color: #ccc;
+    padding: 8px;
+    text-align: right;
+}
+
+button{
+    cursor: pointer;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+#main-container > aside{
+    display: none;
+}
+
+ul#cards > li{
+    background-color: rgb(255, 237, 154);
+    padding: 8px;
+    margin: 4px;
+    display: flex;
+    overflow: auto;
+}
+
+
+ul#cards > li > input[type="text"]{
+    background-color:transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 4px;
+    flex: 1;
+}
+
+ul#cards > li > textarea{
+    flex: 2;
+    background-color:transparent;
+    border: 1px solid #ccc;
+    margin-left: 4px;
+    margin-right: 4px;
+    min-width: 150px;
+    resize: none;
+}
+
+ul#cards > li .btn-container{
+    text-align: center;
+}
+
+ul#cards.grade-grande > li, 
+ul#cards.grade-pequena > li{
+    flex-direction: column;
+}
+
+ul#cards.grade-grande > li > textarea, 
+ul#cards.grade-pequena > li > textarea{
+    margin: 4px 0 4px 0;
+}
+
+ul#cards.grade-grande, 
+ul#cards.grade-pequena{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+#main-container aside > span{
+    font-weight: bold;
+}
+
+#main-container aside > ul > li{
+    padding: 8px;
+}
+
+#main-container{
+    display: flex;  
+    min-height: calc(100vh - 111px); 
+    flex-direction: column;
+}
+
+#main-container main{
+    flex: 2
+}
+
+#overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0000008a;
+    z-index: 10;
+}
+
+#overlay.on{
+    display: block;
+}
+
+
+/* dispositivos muito pequenos (celulares, abaixo de 600px) */
+@media only screen and (max-width: 600px) {
+    *{
+        font-size: 1.5rem;
+    }
+
+    header h1{
+        font-size: 2.5rem;
+    }
+
+    ul#cards.grade-grande > li{
+        width: calc(100% - 24px);
+        height: 200px;
+    }
+
+    ul#cards.grade-pequena > li{
+        width: calc(50% - 24px);
+        height: 200px;
+    }
+}
+
+/* Dispositivos pequenos(celulares grandes e tablets em modo retato, acima de 600px) */
+@media only screen and (min-width: 600px) {
+    *{
+        font-size: 1.2rem;
+    }
+
+    header h1{
+        font-size: 2rem;
+    }
+
+    ul#cards > li{
+        background-color: rgb(216, 255, 154);
+    }
+
+
+    ul#cards.grade-grande > li{
+        width: calc(50% - 24px);
+        height: 200px;
+    }
+
+    ul#cards.grade-pequena > li{
+        width: calc(33% - 24px);
+        height: 100px;
+    }
+    
+}
+
+/* Dispositivos médios (tablets em modo paisagem, acima de 768px) */
+@media only screen and (min-width: 768px) {
+    *{
+        font-size: 1rem;
+    }
+
+    #menu-cabecalho-tela-pequena{
+        display: none;
+    }
+
+    ul#cards > li{
+        background-color: rgb(154, 255, 247);
+    }
+
+
+    #main-container{
+        display: flex;  
+        justify-content:right; 
+        min-height: calc(100vh - 60px - 48px); 
+        flex-direction: row;
+    }
+    
+    #main-container main{
+        flex: 2
+    }
+
+    #main-container > aside{
+        display: block;
+    }
+    
+    #main-container aside{
+        background-color: rgb(122, 255, 248);
+        padding: 8px;
+    }
+
+    ul#cards.grade-grande > li{
+        width: calc(33% - 24px);
+        height: 200px;
+    }
+    
+    ul#cards.grade-pequena > li{
+        width: 200px;
+        height: 200px;
+    }
+    
+}
+
+/* Dispositivos grandes (notebooks e computadores, acima de 992px) */
+@media only screen and (min-width: 992px) {
+    
+}
+
+/* Dispositivos muito grandes (notebooks e computadores com tela grande, acima de 1200px) */
+@media only screen and (min-width: 1200px) {
+    
+}
